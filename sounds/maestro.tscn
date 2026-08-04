@@ -5,7 +5,7 @@
 [node name="Maestro" type="Node" unique_id=923453854]
 script = ExtResource("1_fhpoh")
 music_files = Array[String](["res://sounds/music/sample.mp3"])
-sfx_files = Array[String](["res://sounds/sfx/click.mp3", "res://sounds/sfx/click_reverb.mp3", "res://sounds/sfx/coin_pickup.mp3", "res://sounds/sfx/pop.mp3"])
+sfx_files = Array[String](["res://sounds/sfx/click.mp3", "res://sounds/sfx/click_reverb.mp3", "res://sounds/sfx/coin_pickup.mp3", "res://sounds/sfx/dice_rolled.mp3", "res://sounds/sfx/pop.mp3", "res://sounds/sfx/roll_dice.mp3"])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=478469167]
 playback_type = 1

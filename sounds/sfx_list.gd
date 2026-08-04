@@ -6,12 +6,16 @@ enum SFX {
 	CLICK = 1,
 	CLICK_REVERB = 2,
 	COIN_PICKUP = 4,
+	DICE_ROLLED = 5,
 	POP = 3,
+	ROLL_DICE = 6,
 }
 
 const NAMES:Dictionary[SFX, String] = {
 	SFX.CLICK: "click",
 	SFX.CLICK_REVERB: "click_reverb",
 	SFX.COIN_PICKUP: "coin_pickup",
+	SFX.DICE_ROLLED: "dice_rolled",
 	SFX.POP: "pop",
+	SFX.ROLL_DICE: "roll_dice",
 }
