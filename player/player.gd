@@ -12,6 +12,7 @@ var mouse_move:Vector2
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var ground_cast: RayCast3D = $GroundCast
 @onready var facing_arrow_pivot: Node3D = $FacingArrowPivot
+@onready var spinner_overlay: SpinnerOverlay = $CanvasLayer/SpinnerOverlay
 
 var coins_collected:int
 
@@ -45,6 +46,11 @@ func _input(event:InputEvent):
 		mouse_move += amount_to_add * 1.5 * .003
 	if Input.is_action_just_pressed("debug_1"):
 		debug = true
+
+func _ready() -> void:
+	spinner_overlay.spinner_result.connect(spinner_move)
+	spinner_overlay.take_turn()
+
 func _process(delta: float) -> void:
 	if debug:
 		move(delta)
@@ -110,6 +116,7 @@ func spinner_move(direction:Vector3, distance:float):
 	moving_tween.tween_callback(func():
 		state = State.IDLE
 		move_complete.emit()
+		spinner_overlay.take_turn()
 	)
 
 func collect_coin():
