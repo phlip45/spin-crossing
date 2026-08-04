@@ -36,7 +36,6 @@ func change_state(new_state:State):
 			get_tree().create_timer(0.88).timeout.connect(func():
 				var direction:Vector3 = rotation_to_vector3(%SpinnerHand.rotation)
 				spin_complete.emit(direction)
-				print(direction)
 				set_visible(false)
 				change_state(State.IDLE)
 			)

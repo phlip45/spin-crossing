@@ -1,7 +1,99 @@
-[gd_scene format=3 uid="uid://d3esxwaehggr5"]
+[gd_scene format=4 uid="uid://d3esxwaehggr5"]
 
 [ext_resource type="PackedScene" uid="uid://bglglqjo8tc6t" path="res://Assets/bridge/bridge_center_wood.glb" id="1_3mp33"]
 [ext_resource type="Script" uid="uid://cs7dkc5fh4k2y" path="res://Scripts/bridge.gd" id="2_h1rw7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1oljo"]
+resource_name = "woodBark"
+albedo_color = Color(0.9482425, 0.7443257, 0.6190008, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsvj4"]
+resource_name = "wood"
+albedo_color = Color(1, 0.7716358, 0.6532799, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diios"]
+resource_name = "stone"
+albedo_color = Color(0.8658767, 0.9482425, 0.9592555, 1)
+metallic = 1.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0s56r"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.3, 1),
+"format": 34359742465,
+"index_count": 138,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgAEAAAABQAAAAQAAgADAAYAAgAGAAcACAAGAAMACQAIAAMAAwAKAAkACwAKAAMAAwAFAAsACQAMAAgADAAJAA0ABwAGAA4ABQAEAA4ADgAPAAcADwAOAAQABQAOABAAEAALAAUABwAPABEABAARAA8ACwAQABIADQALABIAEAAIABMAEwASABAAEwAIAAwAFAANABIADQAUAAwAFQASABMAFgAUABIAEgAVABYADAAUABYAEwAXABUAFgAVABcAEwAMABgAFgAYAAwAGAAXABMAFwAYABYABAAZABEAGgAZAAQABAACABoAGwARABkAGQAaABsAGwAaAAIAEQAbAAcABwAbAAIA"),
+"name": "woodBark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("AAAAv5qZGT5mZua+AAAAP5qZGT5mZua+AAAAPwAAgD5mZua+AAAAPwAAAABmZua+AAAAvwAAgD5mZua+AAAAvxAJ8ChmZua+AAAAP83MTD7NzMy+AAAAP5qZmT7NzMy+AAAAP83MTD7NzMw+AAAAP5qZGT5mZuY+AAAAP+pbJSVmZuY+AAAAv8dT8ShmZuY+AAAAPwAAgD5mZuY+AAAAv5qZGT5mZuY+AAAAv83MTD7NzMy+AAAAv5qZmT7NzMy+AAAAv83MTD7NzMw+AAAAv5qZmT4AAAC/AAAAv5qZmT7NzMw+AAAAP5qZmT7NzMw+AAAAvwAAgD5mZuY+AAAAv5qZmT4AAAA/AAAAvwAAgD4AAAA/AAAAP5qZmT4AAAA/AAAAPwAAgD4AAAA/AAAAvwAAgD4AAAC/AAAAPwAAgD4AAAC/AAAAP5qZmT4AAAC/")
+}, {
+"aabb": AABB(-0.5, 0, -0.45, 1, 0.15, 0.9),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA"),
+"name": "wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAD//wAA//8AAAAAAAD//wAAAAD/////AAAAAAAAAAAAAP//AAAAAAAA/////wAAAAAAAP//AAAAAA==")
+}, {
+"aabb": AABB(-0.5, 0.2, -0.4, 1, 1e-05, 0.8),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "stone",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAP//AAAAAAAA//8AAAAAAAAAAAAA//8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h1rw7"]
+resource_local_to_scene = true
+resource_name = "bridge_center_wood_Mesh bridge_center_wood"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.3, 1),
+"attribute_data": PackedByteArray("9nqdQfT5nMD2ep3B9PmcwPZ6ncH2eg3B9nqdQfZ6DcH2ep1B8PfbwPZ6ncHw99vA9nqdwfT5LMH2ep1B9PkswfZ6ncH2epXB9nqdQfZ6lcH2ep1Bd7uFwfZ6ncF3u4XB9nqdQfT5LMH2ep1B9noNwfZ6ncH2eg3B9nqdwfT5LMH2ep1B9noNwfZ6nUH0+ZzA9nqdwfT5nMD2ep3B9noNwfD3e0H0+SzB9nqdQfT5LMH2ep1B9noNwXe7jUH2eg3Bd7uNQfT5nMB3u41BAACAP/D3e0Hw99vAd7uNwQAAgD/w93vB8PfbwHe7jcH2eg3Bd7uNwfT5nMDw93vB9PkswfZ6ncH0+SzB9nqdwfZ6DcF3u41BAACAP3e7jcEAAIA/d7uNwfT5nMDw93vB8PfbwHe7jcH2eg3B8Pd7wfT5LMH2ep3B9noNwfZ6ncH0+SzB8Pd7QfD328B3u41B9noNwXe7jUH0+ZzA8Pd7QfT5LMH2ep1B9PkswfZ6nUH2eg3B9nqdwXe7hcH2ep1Bd7uFwfZ6nUF3u5VB9nqdwXe7lUH2ep1B9noNwfZ6ncH2eg3B9nqdwfT5LMH2ep1B9PkswfZ6ncH2eqVB9nqdwfj7hUH2ep1B+PuFQfZ6nUH2eqVB9nqdQfT5LMH2ep1B8PfbwPZ6ncHw99vA9nqdwfT5LMH2ep1B8PdrwfZ6ncHw92vB9nqdwfZ6lcH2ep1B9nqVwfZ6ncF3u5VB9nqdQXe7lUH2ep1B9nqlQfZ6ncH2eqVB"),
+"format": 34359742487,
+"index_count": 138,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAFwAYABQAGAAZABQAGQAaABQAGgAZABsAGwAcABoAGwAdABwAGwAeAB0AHwAcAB0AHQAgAB8AHQAhACAAIgAjACQAJAAlACIAJAAmACUAJwAlACYAJwAmACgAKAApACcAJQAqACIAKwAiACoAKwAsACIAKwAqAC0ALQAuACsALgAvACsAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQA"),
+"material": SubResource("StandardMaterial3D_1oljo"),
+"name": "woodBark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("AAAAv5qZGT5mZua+AAAAP5qZGT5mZua+AAAAPwAAgD5mZua+AAAAvwAAgD5mZua+AAAAv83MTD7NzMw+AAAAP83MTD7NzMw+AAAAP5qZmT7NzMw+AAAAv5qZmT7NzMw+AAAAPwAAgD4AAAC/AAAAvwAAgD4AAAC/AAAAvwAAgD5mZua+AAAAPwAAgD5mZua+AAAAP5qZmT4AAAA/AAAAPwAAgD4AAAA/AAAAvwAAgD4AAAA/AAAAv5qZmT4AAAA/AAAAPwAAgD5mZuY+AAAAP5qZGT5mZuY+AAAAv5qZGT5mZuY+AAAAvwAAgD5mZuY+AAAAv5qZmT7NzMw+AAAAv5qZmT4AAAA/AAAAvwAAgD4AAAA/AAAAvwAAgD5mZuY+AAAAv5qZGT5mZuY+AAAAv8dT8ShmZuY+AAAAv83MTD7NzMw+AAAAvxAJ8ChmZua+AAAAv83MTD7NzMy+AAAAvwAAgD5mZua+AAAAv5qZGT5mZua+AAAAv5qZmT7NzMy+AAAAv5qZmT4AAAC/AAAAvwAAgD4AAAC/AAAAPwAAAABmZua+AAAAP+pbJSVmZuY+AAAAP5qZGT5mZuY+AAAAP83MTD7NzMw+AAAAPwAAgD5mZuY+AAAAP5qZmT7NzMw+AAAAPwAAgD4AAAA/AAAAP5qZmT4AAAA/AAAAP83MTD7NzMy+AAAAPwAAgD5mZua+AAAAP5qZGT5mZua+AAAAP5qZmT7NzMy+AAAAP5qZmT4AAAC/AAAAPwAAgD4AAAC/AAAAPwAAAABmZua+AAAAvxAJ8ChmZua+AAAAv8dT8ShmZuY+AAAAP+pbJSVmZuY+AAAAvwAAgD4AAAC/AAAAPwAAgD4AAAC/AAAAP5qZmT4AAAC/AAAAv5qZmT4AAAC/AAAAv5qZmT4AAAA/AAAAv5qZmT7NzMw+AAAAP5qZmT7NzMw+AAAAP5qZmT4AAAA/AAAAP5qZmT7NzMy+AAAAP83MTD7NzMy+AAAAv83MTD7NzMy+AAAAv5qZmT7NzMy+AAAAP5qZmT7NzMy+AAAAv5qZmT7NzMy+AAAAv5qZmT4AAAC/AAAAP5qZmT4AAAC/AAAAPwAAgD5mZuY+AAAAvwAAgD5mZuY+AAAAvwAAgD4AAAA/AAAAPwAAgD4AAAA//////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////vwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f////78AAP9//3//vwAA/3//f/+/AAD/f/9//7////9///8AgP///3///wCA////f///AID///9//////////3//////////f/////////9//////////3//////////f///AID///9///8AgP///3////+/////f///AID///9//////////3///////38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/9///////+//3///////7//f///////v/9///////+//3//f////7//f/9/////v/9//3////+//3//f////7//f///////v/9///////+//3///////7//f///////v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+/")
+}, {
+"aabb": AABB(-0.5, 0, -0.45, 1, 0.15, 0.9),
+"attribute_data": PackedByteArray("//8AAP//F5oAABeaAAAAAP//F5oAABeaAAAAAP//AAA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA"),
+"material": SubResource("StandardMaterial3D_jsvj4"),
+"name": "wood",
+"primitive": 3,
+"uv_scale": Vector4(39.37008, 9.811024, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AID//wAA//8AgAAAAAD//wCAAAD/////AIAAAAAAAAD/////AAAAAP///////wAA//8AAP//AAD///9/////f////3////9/////f////3////9/////f///")
+}, {
+"aabb": AABB(-0.5, 0.2, -0.4, 1, 1e-05, 0.8),
+"attribute_data": PackedByteArray("/////wAA//8AAEgP//9IDw=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_diios"),
+"name": "stone",
+"primitive": 3,
+"uv_scale": Vector4(39.37008, 33.496063, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAP///78AAAAA////vwAAAAAAAP+///8AAAAA/7////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0s56r")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqjpo"]
 size = Vector3(0.138, 5.666, 3.0134)
@@ -12,16 +104,15 @@ size = Vector3(0.138, 5.666, 3.0134)
 [node name="bridge_center_wood2" unique_id=1012253203 instance=ExtResource("1_3mp33")]
 script = ExtResource("2_h1rw7")
 
-[node name="bridge_center_wood" parent="." index="0" unique_id=489096227]
-unique_name_in_owner = true
+[node name="bridge_center_wood" parent="." index="0" unique_id=879639657]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0)
 visible = false
+mesh = SubResource("ArrayMesh_h1rw7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=364457781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8730042, 0.7743498, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1372331018]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42819554, 0, 0)
 shape = SubResource("BoxShape3D_kqjpo")
 

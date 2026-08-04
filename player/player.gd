@@ -146,3 +146,9 @@ func spinner_move(direction:Vector3, distance:float):
 func collect_coin():
 	coins_collected += 1
 	Maestro.play_sfx(SFXList.SFX.POP)
+
+func remove_coin():
+	if coins_collected > 0:
+		coins_collected -= 1
+	Maestro.play_sfx(SFXList.SFX.POP)
+		

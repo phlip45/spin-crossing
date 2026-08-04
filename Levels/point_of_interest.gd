@@ -6,7 +6,7 @@ class_name PointOfInterest
 
 var player:Player
 
-signal player_entered
+signal player_entered(player:Player)
 signal player_exited
 
 @export var radius:float:
@@ -25,8 +25,8 @@ func has_player() -> bool:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
-		player_entered.emit()
 		player = body as Player
+		player_entered.emit(player)
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is Player:
