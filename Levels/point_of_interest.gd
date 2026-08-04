@@ -16,8 +16,9 @@ signal player_exited
 			recalc()		
 
 func recalc():
-		var sphere:SphereShape3D = collision_shape_3d.shape
-		sphere.radius = radius
+	if !collision_shape_3d: return
+	var sphere:SphereShape3D = collision_shape_3d.shape
+	sphere.radius = radius
 
 func has_player() -> bool:
 	return player != null

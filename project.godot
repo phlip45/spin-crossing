@@ -15,6 +15,10 @@ run/main_scene="uid://bmg1cwvhc2k3n"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Maestro="*uid://dov01q3yrw2fx"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -22,7 +26,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/backstitch/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

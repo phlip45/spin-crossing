@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dov01q3yrw2fx"]
+
+[ext_resource type="Script" uid="uid://dflaliyvvhela" path="res://sounds/maestro.gd" id="1_fhpoh"]
+
+[node name="Maestro" type="Node" unique_id=923453854]
+script = ExtResource("1_fhpoh")
+music_files = Array[String](["res://sounds/music/sample.mp3"])
+sfx_files = Array[String](["res://sounds/sfx/click.mp3", "res://sounds/sfx/click_reverb.mp3", "res://sounds/sfx/coin_pickup.mp3", "res://sounds/sfx/pop.mp3"])
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=478469167]
+playback_type = 1
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1827375954]
+
+[node name="SFXPlayer2" type="AudioStreamPlayer" parent="." unique_id=1815552172]
+max_polyphony = 20
+
+[node name="SFXPlayer3" type="AudioStreamPlayer" parent="." unique_id=351198178]
+max_polyphony = 20
+
+[node name="SFXPlayer4" type="AudioStreamPlayer" parent="." unique_id=977357349]
+max_polyphony = 20
+
+[node name="SFXPlayer5" type="AudioStreamPlayer" parent="." unique_id=123301307]
+max_polyphony = 20
+
+[node name="SFXPlayer6" type="AudioStreamPlayer" parent="." unique_id=1452257823]
+max_polyphony = 20

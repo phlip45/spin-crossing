@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-const speed = 5.0
+@export var speed = 5.0
 @export var sprint:float = 10.0
 @export var sprint_max:float = 10.0
 @export var acceleration:float = 1.0
@@ -11,8 +11,9 @@ const JUMP_VELOCITY = 4.5
 var mouse_move:Vector2
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var ground_cast: RayCast3D = $GroundCast
-@onready var facing_arrow: MeshInstance3D = $FacingArrow
 @onready var facing_arrow_pivot: Node3D = $FacingArrowPivot
+
+var coins_collected:int
 
 signal move_complete
 
@@ -110,4 +111,7 @@ func spinner_move(direction:Vector3, distance:float):
 		state = State.IDLE
 		move_complete.emit()
 	)
-	
+
+func collect_coin():
+	coins_collected += 1
+	Maestro.play_sfx(SFXList.SFX.POP)
