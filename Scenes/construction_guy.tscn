@@ -1,5 +1,70 @@
 [gd_scene format=3 uid="uid://ly5t38hr3fi6"]
 
 [ext_resource type="PackedScene" uid="uid://d0wacae4qey6l" path="res://Assets/people/character-male-b.glb" id="1_e5f2x"]
+[ext_resource type="Script" uid="uid://dpkm6mjxix2ox" path="res://Scenes/construction_guy.gd" id="2_ibvbc"]
+[ext_resource type="PackedScene" uid="uid://cxgt1vfw8xws4" path="res://Levels/point_of_interest.tscn" id="3_qywq8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqjpo"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.81, 0.62, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.45, 0.29932496, 0.2295, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_kqjpo"]
+variation_transform = Transform2D(0.908, 0.334, 0.04, 1.064, 0, 0)
 
 [node name="construction_guy" unique_id=1590360739 instance=ExtResource("1_e5f2x")]
+script = ExtResource("2_ibvbc")
+
+[node name="Skeleton3D" parent="character-male-b" parent_id_path=PackedInt32Array(1860241965) index="0" unique_id=810390955]
+bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
+bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
+
+[node name="PointOfInterest" parent="." index="2" unique_id=34609657 instance=ExtResource("3_qywq8")]
+radius = 1.8599999999999999
+
+[node name="UI_CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=815109194]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_CanvasLayer" index="0" unique_id=1448525098]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Message_PanelContainer" type="PanelContainer" parent="UI_CanvasLayer/MarginContainer" index="0" unique_id=1495680730]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -140)
+theme_override_styles/panel = SubResource("StyleBoxFlat_kqjpo")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_CanvasLayer/MarginContainer/Message_PanelContainer" index="0" unique_id=1242672655]
+layout_mode = 2
+
+[node name="Message_Label" type="Label" parent="UI_CanvasLayer/MarginContainer/Message_PanelContainer/MarginContainer" index="0" unique_id=741422841]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.8980667, 0.874, 1)
+theme_override_colors/font_outline_color = Color(0.24, 0.15963998, 0.12239999, 1)
+theme_override_constants/outline_size = 29
+theme_override_fonts/font = SubResource("FontVariation_kqjpo")
+theme_override_font_sizes/font_size = 39
+text = "Bring 1 coin, and I'll build some bridge!"
+horizontal_alignment = 1
+
+[connection signal="player_entered" from="PointOfInterest" to="." method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="PointOfInterest" to="." method="_on_point_of_interest_player_exited"]
