@@ -35,13 +35,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9918, 0, -35.950798)
 shape = SubResource("WorldBoundaryShape3D_kqjpo")
 
 [node name="bridge_center_wood2" parent="." unique_id=1012253203 instance=ExtResource("3_xfk5q")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.544, -39.68242)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.555483, -39.68242)
 
 [node name="bridge_center_wood3" parent="." unique_id=2103911145 instance=ExtResource("3_xfk5q")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.544, -42.678257)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.555483, -42.678257)
 
 [node name="bridge_center_wood4" parent="." unique_id=601400189 instance=ExtResource("3_xfk5q")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.544, -45.674156)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.555483, -45.674156)
 
 [node name="water" type="Node3D" parent="." unique_id=1942114370]
 

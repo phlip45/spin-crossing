@@ -16,16 +16,18 @@ color_ramp = SubResource("Gradient_7p6j4")
 [sub_resource type="Gradient" id="Gradient_xfk5q"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6444e"]
-frequency = 0.4496
+frequency = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_evi0p"]
+width = 2048
+height = 2048
 noise = SubResource("FastNoiseLite_6444e")
 color_ramp = SubResource("Gradient_xfk5q")
 
 [sub_resource type="Gradient" id="Gradient_8ffim"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7p6j4"]
-frequency = 0.0553
+frequency = 0.4708
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6444e"]
 noise = SubResource("FastNoiseLite_7p6j4")
@@ -36,10 +38,10 @@ render_priority = 0
 shader = ExtResource("1_0wv2u")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_6444e")
 shader_parameter/layers = 171
-shader_parameter/depth_scale = 0.2
-shader_parameter/depth_strength = 0.58000002755
+shader_parameter/depth_scale = 0.09000000357648
+shader_parameter/depth_strength = 0.2170000103075
 shader_parameter/detail_noise_texture = SubResource("NoiseTexture2D_evi0p")
-shader_parameter/shape_detail_mix_factor = 0.4
+shader_parameter/shape_detail_mix_factor = 0.3690000175275
 shader_parameter/detail_scale = Vector2(4, 4)
 shader_parameter/highlight_color = Color(0.30284783, 0.41951627, 0.20005104, 1)
 shader_parameter/base_color = Color(0.03556668, 0.08862851, 0.023918414, 1)
