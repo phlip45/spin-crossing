@@ -1,0 +1,14 @@
+- Spacebar to roll dice, number logged.
+- Spacebar to stop a spinning boardgame spinner.
+- Where it stops determines direction player moves.
+- hazards? setbacks? finish line? who knows.
+- just a test or smth
+- indicate player direction (big arrow?)
+
+Adding things
+cam was here
+Adding extra thing
+
+Adding 3rd thing
+
+New thing

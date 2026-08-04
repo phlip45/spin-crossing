@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dsty78tx8o3d3"]
+
+[ext_resource type="Script" uid="uid://ge0cexn65hgk" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="2_rkbax"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kol06"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kol06"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7w1kp"]
+transparency = 1
+albedo_color = Color(0.35686275, 0.58431375, 0.26666668, 0.41568628)
+
+[sub_resource type="PrismMesh" id="PrismMesh_kol06"]
+material = SubResource("StandardMaterial3D_7w1kp")
+size = Vector3(1, 1.37, 0.265)
+
+[node name="Player" type="CharacterBody3D" unique_id=915047705]
+script = ExtResource("1_oul6g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1803387690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kol06")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=316126499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_kol06")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=281723054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6428525, 0)
+
+[node name="GroundCast" type="RayCast3D" parent="." unique_id=167252857]
+
+[node name="FacingArrowPivot" type="Node3D" parent="." unique_id=598762584]
+
+[node name="FacingArrow" type="MeshInstance3D" parent="FacingArrowPivot" unique_id=1481736790]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.097644, -1.6452153)
+mesh = SubResource("PrismMesh_kol06")
+
+[node name="Pulse" parent="FacingArrowPivot/FacingArrow" unique_id=1154750537 instance=ExtResource("2_rkbax")]

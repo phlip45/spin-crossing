@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bmg1cwvhc2k3n"]
+
+[ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_7t0bs"]
+[ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="2_hb16j"]
+[ext_resource type="PackedScene" uid="uid://bu6je2ingas2a" path="res://UI/SpinnerOverlay.tscn" id="2_sthmh"]
+[ext_resource type="PackedScene" uid="uid://bog0syx4ei042" path="res://Assets/trees/tree_tall.glb" id="4_u4pyh"]
+[ext_resource type="Script" uid="uid://bs086pp44vkl7" path="res://tests/tree_tall_pulse_thingy.gd" id="5_srgx1"]
+[ext_resource type="PackedScene" uid="uid://cxgt1vfw8xws4" path="res://Levels/point_of_interest.tscn" id="6_njmkb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sthmh"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_hb16j"]
+sky_material = SubResource("ProceduralSkyMaterial_sthmh")
+
+[sub_resource type="Environment" id="Environment_ynt12"]
+background_mode = 2
+sky = SubResource("Sky_hb16j")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kol06"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kol06"]
+
+[node name="TestLevelPhlip" type="Node3D" unique_id=895677479]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1694688265]
+environment = SubResource("Environment_ynt12")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=137604751]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=460488575]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=153206124]
+shape = SubResource("WorldBoundaryShape3D_kol06")
+
+[node name="Player" parent="." unique_id=915047705 instance=ExtResource("1_7t0bs")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=347053097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.559704, 0.4, -2.4331508)
+mesh = SubResource("BoxMesh_kol06")
+
+[node name="Pulse" parent="MeshInstance3D" unique_id=1154750537 instance=ExtResource("2_hb16j")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1464770793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8162012, 0.4, -2.005485)
+mesh = SubResource("BoxMesh_kol06")
+
+[node name="Pulse" parent="MeshInstance3D2" unique_id=1026130248 instance=ExtResource("2_hb16j")]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=548451533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1680517, 0.4, 1.9652414)
+mesh = SubResource("BoxMesh_kol06")
+
+[node name="Pulse" parent="MeshInstance3D3" unique_id=2039084294 instance=ExtResource("2_hb16j")]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=818049540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6668644, 0.4, 2.8333807)
+mesh = SubResource("BoxMesh_kol06")
+
+[node name="Pulse" parent="MeshInstance3D4" unique_id=78344766 instance=ExtResource("2_hb16j")]
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=198570822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3413937, 0.4, -5.2724905)
+mesh = SubResource("BoxMesh_kol06")
+
+[node name="Pulse" parent="MeshInstance3D5" unique_id=1611991062 instance=ExtResource("2_hb16j")]
+
+[node name="SpinnerOverlay" parent="." unique_id=1498916174 instance=ExtResource("2_sthmh")]
+
+[node name="tree_tall2" parent="." unique_id=318416177 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11860418, -2.3841858e-07, -9.247505)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall2" unique_id=915949004 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall2" unique_id=34609657 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[node name="tree_tall3" parent="." unique_id=358643109 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2382002, -2.3841858e-07, -9.136748)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall3" unique_id=198598870 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall3" unique_id=1475468231 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[node name="tree_tall4" parent="." unique_id=1126896136 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6705494, -2.3841858e-07, -7.070063)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall4" unique_id=338388347 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall4" unique_id=1231635265 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[node name="tree_tall5" parent="." unique_id=947320018 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4906135, -2.3841858e-07, -5.8658752)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall5" unique_id=988838392 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall5" unique_id=1903229951 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[node name="tree_tall6" parent="." unique_id=1161871358 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92485, -7.1525574e-07, -10.940548)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall6" unique_id=914872630 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall6" unique_id=1268949681 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[node name="tree_tall7" parent="." unique_id=928088397 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0554566, -2.3841858e-07, -12.314733)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall7" unique_id=1096474612 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall7" unique_id=1502169531 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[node name="tree_tall8" parent="." unique_id=1433588214 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2454462, -2.3841858e-07, -11.90902)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall8" unique_id=1753845423 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall8" unique_id=1861021413 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[node name="tree_tall9" parent="." unique_id=24239251 instance=ExtResource("4_u4pyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.663906, -2.3841858e-07, -7.5601296)
+script = ExtResource("5_srgx1")
+
+[node name="Pulse" parent="tree_tall9" unique_id=1391689100 instance=ExtResource("2_hb16j")]
+active = false
+
+[node name="PointOfInterest" parent="tree_tall9" unique_id=1687660372 instance=ExtResource("6_njmkb")]
+radius = 2.92
+
+[connection signal="player_entered" from="tree_tall2/PointOfInterest" to="tree_tall2" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall2/PointOfInterest" to="tree_tall2" method="_on_point_of_interest_player_exited"]
+[connection signal="player_entered" from="tree_tall3/PointOfInterest" to="tree_tall3" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall3/PointOfInterest" to="tree_tall3" method="_on_point_of_interest_player_exited"]
+[connection signal="player_entered" from="tree_tall4/PointOfInterest" to="tree_tall4" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall4/PointOfInterest" to="tree_tall4" method="_on_point_of_interest_player_exited"]
+[connection signal="player_entered" from="tree_tall5/PointOfInterest" to="tree_tall5" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall5/PointOfInterest" to="tree_tall5" method="_on_point_of_interest_player_exited"]
+[connection signal="player_entered" from="tree_tall6/PointOfInterest" to="tree_tall6" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall6/PointOfInterest" to="tree_tall6" method="_on_point_of_interest_player_exited"]
+[connection signal="player_entered" from="tree_tall7/PointOfInterest" to="tree_tall7" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall7/PointOfInterest" to="tree_tall7" method="_on_point_of_interest_player_exited"]
+[connection signal="player_entered" from="tree_tall8/PointOfInterest" to="tree_tall8" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall8/PointOfInterest" to="tree_tall8" method="_on_point_of_interest_player_exited"]
+[connection signal="player_entered" from="tree_tall9/PointOfInterest" to="tree_tall9" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="tree_tall9/PointOfInterest" to="tree_tall9" method="_on_point_of_interest_player_exited"]

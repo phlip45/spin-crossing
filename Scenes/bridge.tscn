@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d3esxwaehggr5"]
+
+[ext_resource type="PackedScene" uid="uid://bglglqjo8tc6t" path="res://Assets/bridge/bridge_center_wood.glb" id="1_3mp33"]
+
+[node name="bridge_center_wood2" unique_id=1012253203 instance=ExtResource("1_3mp33")]

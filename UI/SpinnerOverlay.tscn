@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bu6je2ingas2a"]
+
+[ext_resource type="PackedScene" uid="uid://bxpmb0kbe1y3g" path="res://player/spinners/spinner.tscn" id="1_0ypf1"]
+[ext_resource type="PackedScene" uid="uid://d0v32qeg8115w" path="res://Scenes/dice.tscn" id="2_g3bhf"]
+
+[node name="SpinnerOverlay" type="CenterContainer" unique_id=1498916174]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=548019134]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=876863224]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(150, 150)
+render_target_update_mode = 4
+
+[node name="Spinner" parent="SubViewportContainer/SubViewport" unique_id=476827029 instance=ExtResource("1_0ypf1")]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport" unique_id=171966486]
+
+[node name="Dice" parent="SubViewportContainer/SubViewport" unique_id=749008442 instance=ExtResource("2_g3bhf")]
+visible = false
+
+[connection signal="die_rolled" from="SubViewportContainer/SubViewport/Dice" to="SubViewportContainer/SubViewport/Spinner" method="ready_for_spin"]

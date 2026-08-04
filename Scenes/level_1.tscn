@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cm7cpf0x88t2j"]
+
+[ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_vk57k"]
+[ext_resource type="Shader" uid="uid://dqdrgv0kf8lom" path="res://Shaders/grass.gdshader" id="2_8ffim"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xfk5q"]
+sky_material = SubResource("ProceduralSkyMaterial_8ffim")
+
+[sub_resource type="Environment" id="Environment_7p6j4"]
+background_mode = 2
+sky = SubResource("Sky_xfk5q")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kqjpo"]
+
+[sub_resource type="Gradient" id="Gradient_7p6j4"]
+offsets = PackedFloat32Array(0.06872852, 0.9312715)
+colors = PackedColorArray(0, 0.3019608, 0, 1, 1, 0.6978333, 0.51, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xfk5q"]
+frequency = 0.0215
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8ffim"]
+noise = SubResource("FastNoiseLite_xfk5q")
+color_ramp = SubResource("Gradient_7p6j4")
+
+[sub_resource type="Gradient" id="Gradient_xfk5q"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6444e"]
+frequency = 0.4496
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_evi0p"]
+noise = SubResource("FastNoiseLite_6444e")
+color_ramp = SubResource("Gradient_xfk5q")
+
+[sub_resource type="Gradient" id="Gradient_8ffim"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7p6j4"]
+frequency = 0.0553
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6444e"]
+noise = SubResource("FastNoiseLite_7p6j4")
+color_ramp = SubResource("Gradient_8ffim")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vk57k"]
+render_priority = 0
+shader = ExtResource("2_8ffim")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_6444e")
+shader_parameter/layers = 20
+shader_parameter/depth_scale = 0.2
+shader_parameter/depth_strength = 0.58000002755
+shader_parameter/detail_noise_texture = SubResource("NoiseTexture2D_evi0p")
+shader_parameter/shape_detail_mix_factor = 0.4
+shader_parameter/detail_scale = Vector2(4, 4)
+shader_parameter/highlight_color = Color(0.30284783, 0.41951627, 0.20005104, 1)
+shader_parameter/base_color = Color(0.03556668, 0.08862851, 0.023918414, 1)
+shader_parameter/mix_amount = 0.462000021945
+shader_parameter/colour_noise_texture = SubResource("NoiseTexture2D_8ffim")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kqjpo"]
+material = SubResource("ShaderMaterial_vk57k")
+size = Vector2(75, 75)
+orientation = 1
+
+[node name="Level1" type="Node3D" unique_id=213846363]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873596132]
+environment = SubResource("Environment_7p6j4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=83222396]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=915047705 instance=ExtResource("1_vk57k")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1297136223]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1885969606]
+shape = SubResource("WorldBoundaryShape3D_kqjpo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1542423177]
+mesh = SubResource("QuadMesh_kqjpo")

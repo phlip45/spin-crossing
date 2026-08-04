@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cxgt1vfw8xws4"]
+
+[ext_resource type="Script" uid="uid://bbkxktyoe34iw" path="res://Levels/point_of_interest.gd" id="1_aswqo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kol06"]
+radius = 2.92
+
+[node name="PointOfInterest" type="Area3D" unique_id=34609657]
+script = ExtResource("1_aswqo")
+radius = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=804103964]
+shape = SubResource("SphereShape3D_kol06")
+debug_color = Color(0.8797566, 0.3228222, 0.27160084, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

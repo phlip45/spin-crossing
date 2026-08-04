@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://biu7q1v13lymg"]
+
+[ext_resource type="Script" uid="uid://d2caxj378blxa" path="res://tweens/pulse.gd" id="1_jbf4v"]
+
+[node name="Pulse" type="Node" unique_id=1154750537]
+script = ExtResource("1_jbf4v")
