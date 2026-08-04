@@ -1,0 +1,6 @@
+{
+	"res://sounds/sfx/click.mp3": 1.0,
+	"res://sounds/sfx/click_reverb.mp3": 2.0,
+	"res://sounds/sfx/coin_pickup.mp3": 4,
+	"res://sounds/sfx/pop.mp3": 3.0
+}
