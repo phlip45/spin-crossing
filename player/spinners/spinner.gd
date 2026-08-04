@@ -4,7 +4,7 @@ class_name Spinner
 
 signal spin_complete(direction: Vector3)
 
-const spin_force: float = 20.0
+const spin_force: float = PI
 const spin_friction: float = 40.0
 @export var angular_velocity: float = 1.0
 var state: State = State.IDLE

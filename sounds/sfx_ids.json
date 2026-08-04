@@ -1,6 +1,8 @@
 {
 	"res://sounds/sfx/click.mp3": 1.0,
 	"res://sounds/sfx/click_reverb.mp3": 2.0,
-	"res://sounds/sfx/coin_pickup.mp3": 4,
-	"res://sounds/sfx/pop.mp3": 3.0
+	"res://sounds/sfx/coin_pickup.mp3": 4.0,
+	"res://sounds/sfx/dice_rolled.mp3": 5,
+	"res://sounds/sfx/pop.mp3": 3.0,
+	"res://sounds/sfx/roll_dice.mp3": 6
 }

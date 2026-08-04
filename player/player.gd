@@ -110,16 +110,33 @@ func spinner_move(direction:Vector3, distance:float):
 		push_error("Tried moving while already moving")
 		return
 	state = State.MOVING
-	facing_arrow_pivot.look_at(position + direction)
+	
+	direction = direction.normalized()
+	
+	var world_direction = facing_arrow_pivot.global_transform.basis * direction
+	
+	var start_basis = facing_arrow_pivot.global_transform.basis
+	facing_arrow_pivot.look_at(position + world_direction)
+	var end_basis = facing_arrow_pivot.global_transform.basis
+	facing_arrow_pivot.global_transform.basis = start_basis
 	
 	moving_tween = create_tween()
-	direction = direction.normalized()
+	moving_tween.set_parallel(true)
+	
 	moving_tween.tween_property(
 		self, 
 		"position", 
-		position + direction * distance, 
+		position + world_direction * distance, 
 		1.0
 	)
+	
+	moving_tween.tween_method(
+		func(t: float):
+			facing_arrow_pivot.global_transform.basis = start_basis.slerp(end_basis, t),
+		0.0, 1.0, 1.0
+	)
+	
+	moving_tween.set_parallel(false)
 	moving_tween.tween_callback(func():
 		state = State.IDLE
 		move_complete.emit()
