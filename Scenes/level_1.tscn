@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://d3esxwaehggr5" path="res://Scenes/bridge.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://by51ga657ooy0" path="res://Scenes/ground_river_side_2.tscn" id="4_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/Coin.tscn" id="4_6444e"]
+[ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://UI/ui.tscn" id="5_6444e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +18,11 @@ background_mode = 2
 sky = SubResource("Sky_xfk5q")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kqjpo"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_y7hum"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqjpo"]
+size = Vector3(50, 14.572, 1)
 
 [node name="Level1" type="Node3D" unique_id=213846363]
 
@@ -34,6 +41,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9918, 0, -35.950798)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1885969606]
 shape = SubResource("WorldBoundaryShape3D_kqjpo")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=999670491]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 22.412624)
+shape = SubResource("WorldBoundaryShape3D_y7hum")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=815668747]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 0, -78.023865)
+shape = SubResource("WorldBoundaryShape3D_y7hum")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1939017847]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -46.761986, 0, -25.521774)
+shape = SubResource("WorldBoundaryShape3D_y7hum")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=644497201]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 37.21439, 0, -25.521774)
+shape = SubResource("WorldBoundaryShape3D_y7hum")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" unique_id=298607724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4991, 0, -38.784397)
+shape = SubResource("BoxShape3D_kqjpo")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=1090656086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3971, 0, -38.784397)
+shape = SubResource("BoxShape3D_kqjpo")
+
 [node name="bridge_center_wood2" parent="." unique_id=1012253203 instance=ExtResource("3_xfk5q")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.555483, -39.68242)
 
@@ -47,3 +78,10 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.0
 
 [node name="ground_riverSide2" parent="water" unique_id=2077590336 instance=ExtResource("4_7p6j4")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 34.85248, 0.04907552, -40)
+
+[node name="Coins" type="Node3D" parent="." unique_id=1417911355]
+
+[node name="Coin" parent="Coins" unique_id=525592988 instance=ExtResource("4_6444e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59918, -29.959)
+
+[node name="CanvasLayer" parent="." unique_id=815109194 instance=ExtResource("5_6444e")]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bu1cf0m7xn8dc"]
+
+[ext_resource type="PackedScene" uid="uid://f01gidnip7lo" path="res://Assets/people/character-female-b.glb" id="1_dluh4"]
+
+[node name="character-female-b2" unique_id=1382624606 instance=ExtResource("1_dluh4")]
+
+[node name="head-mesh" parent="character-female-b/Skeleton3D" parent_id_path=PackedInt32Array(1748383166) index="1" unique_id=1993419994]
+visible = false

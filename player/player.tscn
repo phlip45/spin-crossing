@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ge0cexn65hgk" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bi3ilow1fevjx" path="res://player/spinners/SpinnerOverlay002.tscn" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://bu1cf0m7xn8dc" path="res://Scenes/player_model.tscn" id="4_yw30f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kol06"]
 
@@ -24,6 +25,7 @@ sprint_max = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1803387690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_kol06")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=316126499]
@@ -46,3 +48,6 @@ mesh = SubResource("PrismMesh_kol06")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=709817924]
 
 [node name="SpinnerOverlay" parent="CanvasLayer" unique_id=1498916174 instance=ExtResource("3_g1dw6")]
+
+[node name="character-female-b2" parent="." unique_id=1382624606 instance=ExtResource("4_yw30f")]
+transform = Transform3D(-2.3940003, 0, -2.0929015e-07, 0, 2.3940003, 0, 2.0929015e-07, 0, -2.3940003, 0, 0, 0)
