@@ -1,55 +1,39 @@
 [gd_scene format=3 uid="uid://by51ga657ooy0"]
 
 [ext_resource type="PackedScene" uid="uid://bdsp1wf1pum6u" path="res://Assets/water/ground_riverSide.glb" id="1_kkkqf"]
-[ext_resource type="Shader" uid="uid://dqdrgv0kf8lom" path="res://Shaders/grass.gdshader" id="2_xr0tq"]
+[ext_resource type="Material" uid="uid://bnc5x6oqbc12a" path="res://Materials/grass.tres" id="2_xr0tq"]
+[ext_resource type="Shader" uid="uid://c2h2mjkcmlhkd" path="res://Shaders/water.gdshader" id="3_tqfbl"]
 
-[sub_resource type="Gradient" id="Gradient_tqfbl"]
-offsets = PackedFloat32Array(0.06872852, 0.9312715)
-colors = PackedColorArray(0, 0.3019608, 0, 1, 1, 0.6978333, 0.51, 1)
+[sub_resource type="Gradient" id="Gradient_ep1sx"]
+colors = PackedColorArray(0, 0, 0.9137255, 1, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_53sfn"]
-frequency = 0.0215
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g2axl"]
-noise = SubResource("FastNoiseLite_53sfn")
-color_ramp = SubResource("Gradient_tqfbl")
-
-[sub_resource type="Gradient" id="Gradient_a3r1v"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_37ecx"]
-frequency = 0.4496
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xonfm"]
-noise = SubResource("FastNoiseLite_37ecx")
-color_ramp = SubResource("Gradient_a3r1v")
-
-[sub_resource type="Gradient" id="Gradient_rs41l"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_5hd3c"]
-frequency = 0.0553
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cl51u"]
+noise_type = 3
+frequency = 0.0246
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8ft0b"]
-noise = SubResource("FastNoiseLite_5hd3c")
-color_ramp = SubResource("Gradient_rs41l")
+noise = SubResource("FastNoiseLite_cl51u")
+color_ramp = SubResource("Gradient_ep1sx")
+seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_eo4mq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfk5q"]
 render_priority = 0
-shader = ExtResource("2_xr0tq")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_8ft0b")
-shader_parameter/layers = 20
-shader_parameter/depth_scale = 0.2
-shader_parameter/depth_strength = 0.58000002755
-shader_parameter/detail_noise_texture = SubResource("NoiseTexture2D_xonfm")
-shader_parameter/shape_detail_mix_factor = 0.4
-shader_parameter/detail_scale = Vector2(4, 4)
-shader_parameter/highlight_color = Color(0.30284783, 0.41951627, 0.20005104, 1)
-shader_parameter/base_color = Color(0.03556668, 0.08862851, 0.023918414, 1)
-shader_parameter/mix_amount = 0.462000021945
-shader_parameter/colour_noise_texture = SubResource("NoiseTexture2D_g2axl")
+shader = ExtResource("3_tqfbl")
+shader_parameter/water_color = Color(0.20645997, 0.51413745, 0.66681176, 1)
+shader_parameter/water_noise_1 = SubResource("NoiseTexture2D_8ft0b")
+shader_parameter/water_noise_2 = SubResource("NoiseTexture2D_8ft0b")
+shader_parameter/depth_distance = 6.40000009536768
+shader_parameter/water_color_ratio = 0.80000001192096
+shader_parameter/beers_law = 5.10000007599612
+shader_parameter/normal_scale = 0.40000000596048
+shader_parameter/roughness_scale = 0.10000000149012
+shader_parameter/time_scale = 1.60000002384192
+shader_parameter/uv_scale = 0.10000000149012
 
 [node name="ground_riverSide2" unique_id=2077590336 instance=ExtResource("1_kkkqf")]
 
-[node name="ground_riverSide" parent="." index="0" unique_id=2118129171]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0)
-visible = false
-surface_material_override/2 = SubResource("ShaderMaterial_eo4mq")
+[node name="ground_riverSide" parent="tmpParent" parent_id_path=PackedInt32Array(102298421) index="0" unique_id=991726798]
+surface_material_override/0 = ExtResource("2_xr0tq")
+surface_material_override/1 = ExtResource("2_xr0tq")
+surface_material_override/2 = ExtResource("2_xr0tq")
+surface_material_override/3 = SubResource("ShaderMaterial_xfk5q")

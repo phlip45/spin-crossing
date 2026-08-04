@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cm7cpf0x88t2j"]
 
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_vk57k"]
-[ext_resource type="Material" uid="uid://bnc5x6oqbc12a" path="res://Materials/grass.tres" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://d3esxwaehggr5" path="res://Scenes/bridge.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://by51ga657ooy0" path="res://Scenes/ground_river_side_2.tscn" id="4_7p6j4"]
 
@@ -18,11 +17,6 @@ sky = SubResource("Sky_xfk5q")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kqjpo"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_kqjpo"]
-material = ExtResource("2_7p6j4")
-size = Vector2(75, 75)
-orientation = 1
-
 [node name="Level1" type="Node3D" unique_id=213846363]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873596132]
@@ -33,17 +27,23 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=915047705 instance=ExtResource("1_vk57k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9918, 0, -35.950798)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1297136223]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1885969606]
 shape = SubResource("WorldBoundaryShape3D_kqjpo")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1542423177]
-mesh = SubResource("QuadMesh_kqjpo")
-
 [node name="bridge_center_wood2" parent="." unique_id=1012253203 instance=ExtResource("3_xfk5q")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, 0.45599997, -6.2824183)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.544, -39.68242)
 
-[node name="ground_riverSide2" parent="." unique_id=2077590336 instance=ExtResource("4_7p6j4")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.05069617, -38.6)
+[node name="bridge_center_wood3" parent="." unique_id=2103911145 instance=ExtResource("3_xfk5q")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.544, -42.678257)
+
+[node name="bridge_center_wood4" parent="." unique_id=601400189 instance=ExtResource("3_xfk5q")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.544, -45.674156)
+
+[node name="water" type="Node3D" parent="." unique_id=1942114370]
+
+[node name="ground_riverSide2" parent="water" unique_id=2077590336 instance=ExtResource("4_7p6j4")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 34.85248, 0.04907552, -40)
