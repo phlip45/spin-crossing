@@ -2,4 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://bglglqjo8tc6t" path="res://Assets/bridge/bridge_center_wood.glb" id="1_3mp33"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqjpo"]
+size = Vector3(0.138, 2.912, 0.98339844)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kqjpo"]
+size = Vector3(0.138, 2.912, 0.98339844)
+
 [node name="bridge_center_wood2" unique_id=1012253203 instance=ExtResource("1_3mp33")]
+
+[node name="bridge_center_wood" parent="." index="0" unique_id=489096227]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=364457781]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1372331018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42819554, 0, 0)
+shape = SubResource("BoxShape3D_kqjpo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" index="0" unique_id=1842363547]
+visible = false
+mesh = SubResource("BoxMesh_kqjpo")

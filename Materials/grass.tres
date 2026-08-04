@@ -1,0 +1,47 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bnc5x6oqbc12a"]
+
+[ext_resource type="Shader" uid="uid://dqdrgv0kf8lom" path="res://Shaders/grass.gdshader" id="1_0wv2u"]
+
+[sub_resource type="Gradient" id="Gradient_7p6j4"]
+offsets = PackedFloat32Array(0.06872852, 0.9312715)
+colors = PackedColorArray(0, 0.3019608, 0, 1, 1, 0.6978333, 0.51, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xfk5q"]
+frequency = 0.0215
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8ffim"]
+noise = SubResource("FastNoiseLite_xfk5q")
+color_ramp = SubResource("Gradient_7p6j4")
+
+[sub_resource type="Gradient" id="Gradient_xfk5q"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6444e"]
+frequency = 0.4496
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_evi0p"]
+noise = SubResource("FastNoiseLite_6444e")
+color_ramp = SubResource("Gradient_xfk5q")
+
+[sub_resource type="Gradient" id="Gradient_8ffim"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7p6j4"]
+frequency = 0.0553
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6444e"]
+noise = SubResource("FastNoiseLite_7p6j4")
+color_ramp = SubResource("Gradient_8ffim")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0wv2u")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_6444e")
+shader_parameter/layers = 20
+shader_parameter/depth_scale = 0.2
+shader_parameter/depth_strength = 0.58000002755
+shader_parameter/detail_noise_texture = SubResource("NoiseTexture2D_evi0p")
+shader_parameter/shape_detail_mix_factor = 0.4
+shader_parameter/detail_scale = Vector2(4, 4)
+shader_parameter/highlight_color = Color(0.30284783, 0.41951627, 0.20005104, 1)
+shader_parameter/base_color = Color(0.03556668, 0.08862851, 0.023918414, 1)
+shader_parameter/mix_amount = 0.462000021945
+shader_parameter/colour_noise_texture = SubResource("NoiseTexture2D_8ffim")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://by51ga657ooy0"]
+
+[ext_resource type="PackedScene" uid="uid://bdsp1wf1pum6u" path="res://Assets/water/ground_riverSide.glb" id="1_kkkqf"]
+
+[node name="ground_riverSide2" unique_id=2077590336 instance=ExtResource("1_kkkqf")]
+
+[node name="ground_riverSide" parent="." index="0" unique_id=2118129171]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0)
