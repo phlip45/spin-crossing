@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_7t0bs"]
 [ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="2_hb16j"]
-[ext_resource type="PackedScene" uid="uid://bu6je2ingas2a" path="res://UI/SpinnerOverlay.tscn" id="2_sthmh"]
 [ext_resource type="PackedScene" uid="uid://bog0syx4ei042" path="res://Assets/trees/tree_tall.glb" id="4_u4pyh"]
 [ext_resource type="Script" uid="uid://bs086pp44vkl7" path="res://tests/tree_tall_pulse_thingy.gd" id="5_srgx1"]
 [ext_resource type="PackedScene" uid="uid://cxgt1vfw8xws4" path="res://Levels/point_of_interest.tscn" id="6_njmkb"]
@@ -67,8 +66,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3413937, 0.4, -5.2724905)
 mesh = SubResource("BoxMesh_kol06")
 
 [node name="Pulse" parent="MeshInstance3D5" unique_id=1611991062 instance=ExtResource("2_hb16j")]
-
-[node name="SpinnerOverlay" parent="." unique_id=1498916174 instance=ExtResource("2_sthmh")]
 
 [node name="tree_tall2" parent="." unique_id=318416177 instance=ExtResource("4_u4pyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11860418, -2.3841858e-07, -9.247505)

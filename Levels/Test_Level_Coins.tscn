@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_krnhu"]
 [ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="2_sa4sl"]
-[ext_resource type="PackedScene" uid="uid://bu6je2ingas2a" path="res://UI/SpinnerOverlay.tscn" id="3_2bipn"]
 [ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/Coin.tscn" id="4_sa4sl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sthmh"]
@@ -65,8 +64,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3413937, 0.4, -5.2724905)
 mesh = SubResource("BoxMesh_kol06")
 
 [node name="Pulse" parent="MeshInstance3D5" unique_id=1611991062 instance=ExtResource("2_sa4sl")]
-
-[node name="SpinnerOverlay" parent="." unique_id=1498916174 instance=ExtResource("3_2bipn")]
 
 [node name="Coin" parent="." unique_id=525592988 instance=ExtResource("4_sa4sl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.792763, -3.9269347)
