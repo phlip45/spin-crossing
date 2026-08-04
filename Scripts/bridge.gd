@@ -1,12 +1,13 @@
-extends Node3D
+class_name Bridge extends Node3D
+
 @onready var _bridge_model: MeshInstance3D = %bridge_center_wood
 @onready var _collision: CollisionShape3D = %CollisionShape3D
 
 @export var bridge_number: int
 
-var _built: bool = false
+static var _built: bool = false
 
-func build(
+static func build(
 coins:int,bridges_built:int
 ) -> bool:
 	if coins > 0 \

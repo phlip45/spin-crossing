@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://cxgt1vfw8xws4" path="res://Levels/point_of_interest.tscn" id="1_xrdnt"]
 [ext_resource type="Script" uid="uid://ccapowjsvwbxd" path="res://Scripts/animation_manager.gd" id="2_wrinw"]
+[ext_resource type="Script" uid="uid://l5c6a12lah72" path="res://Scripts/bridge_manager.gd" id="3_wrinw"]
 [ext_resource type="PackedScene" uid="uid://d3esxwaehggr5" path="res://Scenes/bridge.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://by51ga657ooy0" path="res://Scenes/ground_river_side_2.tscn" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/Coin.tscn" id="4_6444e"]
@@ -40,6 +41,9 @@ radius = 400.0
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PointOfInterest" unique_id=1078240493]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0971298, 0.59918, -37.748333)
 shape = SubResource("SphereShape3D_7g1cm")
+
+[node name="BridgeManager" type="Node" parent="PointOfInterest" unique_id=46345794]
+script = ExtResource("3_wrinw")
 
 [node name="AnimationManager" type="Node" parent="PointOfInterest" unique_id=715342343]
 script = ExtResource("2_wrinw")
@@ -120,7 +124,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59918, -29.959)
 
 [connection signal="player_entered" from="PointOfInterest" to="UI_CanvasLayer" method="_on_point_of_interest_player_entered"]
 [connection signal="player_entered" from="PointOfInterest" to="PointOfInterest/AnimationManager" method="_on_point_of_interest_player_entered"]
+[connection signal="player_entered" from="PointOfInterest" to="PointOfInterest/BridgeManager" method="_on_point_of_interest_player_entered"]
 [connection signal="player_exited" from="PointOfInterest" to="UI_CanvasLayer" method="_on_point_of_interest_player_exited"]
 [connection signal="player_exited" from="PointOfInterest" to="PointOfInterest/AnimationManager" method="_on_point_of_interest_player_exited"]
+[connection signal="player_exited" from="PointOfInterest" to="PointOfInterest/BridgeManager" method="_on_point_of_interest_player_exited"]
 
 [editable path="PointOfInterest/construction_guy"]
