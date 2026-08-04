@@ -8,6 +8,9 @@ var player:Player
 
 signal player_entered
 signal player_exited
+@onready var _bridge_1: Node3D = %bridge1
+@onready var _bridge_2: Node3D = %bridge2
+@onready var _bridge_3: Node3D = %bridge3
 
 @export var radius:float:
 	set(value):
@@ -27,6 +30,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		player_entered.emit()
 		player = body as Player
+		Player.coins_collected
 
 func _on_body_exited(body: Node3D) -> void:
 	if body is Player:

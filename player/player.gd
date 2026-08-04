@@ -1,5 +1,6 @@
 extends CharacterBody3D
 class_name Player
+static var ref: Player ; func _init() -> void:ref=self
 
 @export var speed = 5.0
 @export var sprint:float = 10.0
@@ -14,7 +15,8 @@ var mouse_move:Vector2
 @onready var facing_arrow_pivot: Node3D = $FacingArrowPivot
 @onready var spinner_overlay: SpinnerOverlay = $CanvasLayer/SpinnerOverlay
 
-var coins_collected:int
+static var coins_collected:int
+static var bridges_built:int
 
 signal move_complete
 
@@ -91,6 +93,11 @@ func move(delta:float):
 	if ground_cast.is_colliding() and Input.is_action_just_pressed("jump"):
 		velocity.y += jump_strength
 	move_and_slide()
+	
+static func get_coins() -> int:
+	return coins_collected
+static func get_bridges() -> int:
+	return bridges_built
 
 func mouse_look(_delta:float):
 		camera_3d.rotation.y -= mouse_move.x

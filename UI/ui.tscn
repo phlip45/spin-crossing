@@ -21,7 +21,7 @@ corner_radius_bottom_left = 10
 [sub_resource type="FontVariation" id="FontVariation_kqjpo"]
 variation_transform = Transform2D(0.908, 0.334, 0.04, 1.064, 0, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=815109194]
+[node name="UI_CanvasLayer" type="CanvasLayer" unique_id=815109194]
 script = ExtResource("1_2fwl4")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1448525098]
@@ -37,6 +37,8 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -140)
 theme_override_styles/panel = SubResource("StyleBoxFlat_kqjpo")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Message_PanelContainer" unique_id=1242672655]

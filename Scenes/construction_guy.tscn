@@ -2,4 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://d0wacae4qey6l" path="res://Assets/people/character-male-b.glb" id="1_e5f2x"]
 
-[node name="character-male-b2" unique_id=1590360739 instance=ExtResource("1_e5f2x")]
+[node name="construction_guy" unique_id=1590360739 instance=ExtResource("1_e5f2x")]

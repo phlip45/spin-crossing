@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://cm7cpf0x88t2j"]
 
+[ext_resource type="PackedScene" uid="uid://ly5t38hr3fi6" path="res://Scenes/construction_guy.tscn" id="1_evi0p"]
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://cxgt1vfw8xws4" path="res://Levels/point_of_interest.tscn" id="1_xrdnt"]
+[ext_resource type="Script" uid="uid://ccapowjsvwbxd" path="res://Scripts/animation_manager.gd" id="2_wrinw"]
 [ext_resource type="PackedScene" uid="uid://d3esxwaehggr5" path="res://Scenes/bridge.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://by51ga657ooy0" path="res://Scenes/ground_river_side_2.tscn" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/Coin.tscn" id="4_6444e"]
 [ext_resource type="PackedScene" uid="uid://bsbtpp84pdo2k" path="res://UI/ui.tscn" id="5_6444e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7g1cm"]
+radius = 4.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,6 +32,25 @@ size = Vector3(50, 14.572, 1)
 
 [node name="Level1" type="Node3D" unique_id=213846363]
 
+[node name="UI_CanvasLayer" parent="." unique_id=815109194 instance=ExtResource("5_6444e")]
+
+[node name="PointOfInterest" parent="." unique_id=34609657 instance=ExtResource("1_xrdnt")]
+radius = 400.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PointOfInterest" unique_id=1078240493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0971298, 0.59918, -37.748333)
+shape = SubResource("SphereShape3D_7g1cm")
+
+[node name="AnimationManager" type="Node" parent="PointOfInterest" unique_id=715342343]
+script = ExtResource("2_wrinw")
+
+[node name="construction_guy" parent="PointOfInterest" unique_id=1590360739 instance=ExtResource("1_evi0p")]
+transform = Transform3D(1.6970562, 0, 1.6970562, 0, 2.3999999, 0, -1.6970562, 0, 1.6970562, -2.0971298, 0, -37.748337)
+
+[node name="Skeleton3D" parent="PointOfInterest/construction_guy/character-male-b" parent_id_path=PackedInt32Array(1590360739, 1004597052) index="0" unique_id=137243458]
+bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
+bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873596132]
 environment = SubResource("Environment_7p6j4")
 
@@ -35,6 +60,9 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=915047705 instance=ExtResource("1_vk57k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9918, 0, -35.950798)
+speed = 5.0
+sprint = 10.0
+sprint_max = 10.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1297136223]
 
@@ -65,14 +93,20 @@ shape = SubResource("BoxShape3D_kqjpo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3971, 0, -38.784397)
 shape = SubResource("BoxShape3D_kqjpo")
 
-[node name="bridge_center_wood2" parent="." unique_id=1012253203 instance=ExtResource("3_xfk5q")]
+[node name="bridge1" parent="." unique_id=1012253203 instance=ExtResource("3_xfk5q")]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.555483, -39.68242)
+bridge_number = 1
 
-[node name="bridge_center_wood3" parent="." unique_id=2103911145 instance=ExtResource("3_xfk5q")]
+[node name="bridge2" parent="." unique_id=2103911145 instance=ExtResource("3_xfk5q")]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.555483, -42.678257)
+bridge_number = 2
 
-[node name="bridge_center_wood4" parent="." unique_id=601400189 instance=ExtResource("3_xfk5q")]
+[node name="bridge3" parent="." unique_id=601400189 instance=ExtResource("3_xfk5q")]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.011816978, -0.555483, -45.674156)
+bridge_number = 3
 
 [node name="water" type="Node3D" parent="." unique_id=1942114370]
 
@@ -84,4 +118,9 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 34.8
 [node name="Coin" parent="Coins" unique_id=525592988 instance=ExtResource("4_6444e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59918, -29.959)
 
-[node name="CanvasLayer" parent="." unique_id=815109194 instance=ExtResource("5_6444e")]
+[connection signal="player_entered" from="PointOfInterest" to="UI_CanvasLayer" method="_on_point_of_interest_player_entered"]
+[connection signal="player_entered" from="PointOfInterest" to="PointOfInterest/AnimationManager" method="_on_point_of_interest_player_entered"]
+[connection signal="player_exited" from="PointOfInterest" to="UI_CanvasLayer" method="_on_point_of_interest_player_exited"]
+[connection signal="player_exited" from="PointOfInterest" to="PointOfInterest/AnimationManager" method="_on_point_of_interest_player_exited"]
+
+[editable path="PointOfInterest/construction_guy"]
