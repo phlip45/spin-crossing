@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://bmg1cwvhc2k3n"
+run/main_scene="uid://cm7cpf0x88t2j"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://b8wr0hwoqop4v"
 [autoload]
 
 Maestro="*uid://dov01q3yrw2fx"
+Global="*uid://c2njt77l4jl2f"
 
 [display]
 

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DiceSide" format=3 uid="uid://bn8yhignyio4b"]
+
+[ext_resource type="Script" uid="uid://dcyodw431xmy8" path="res://player/dice/dice_sides/dice_side.gd" id="1_hukqs"]
+[ext_resource type="Texture2D" uid="uid://b520s77sim21" path="res://Assets/dice/dice_6.png" id="2_hukqs"]
+
+[resource]
+script = ExtResource("1_hukqs")
+type = 6
+roll_type = 1
+value = 6.0
+texture = ExtResource("2_hukqs")
+metadata/_custom_type_script = "uid://dcyodw431xmy8"

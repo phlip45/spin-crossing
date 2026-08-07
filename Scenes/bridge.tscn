@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d3esxwaehggr5"]
 
 [ext_resource type="PackedScene" uid="uid://bglglqjo8tc6t" path="res://Assets/bridge/bridge_center_wood.glb" id="1_3mp33"]
-[ext_resource type="Script" uid="uid://cs7dkc5fh4k2y" path="res://Scripts/bridge.gd" id="2_h1rw7"]
+[ext_resource type="Script" uid="uid://cs7dkc5fh4k2y" path="res://Scenes/bridge.gd" id="2_h1rw7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1oljo"]
 resource_name = "woodBark"
@@ -98,9 +98,6 @@ shadow_mesh = SubResource("ArrayMesh_0s56r")
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqjpo"]
 size = Vector3(0.138, 5.666, 3.0134)
 
-[sub_resource type="BoxMesh" id="BoxMesh_kqjpo"]
-size = Vector3(0.138, 5.666, 3.0134)
-
 [node name="bridge_center_wood2" unique_id=1012253203 instance=ExtResource("1_3mp33")]
 script = ExtResource("2_h1rw7")
 
@@ -116,6 +113,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8730042, 0.7743498, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42819554, 0, 0)
 shape = SubResource("BoxShape3D_kqjpo")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" index="0" unique_id=1842363547]
-visible = false
-mesh = SubResource("BoxMesh_kqjpo")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1113432912]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8695416, 0, -1.3704594)
+shape = SubResource("BoxShape3D_kqjpo")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2" unique_id=1750062240]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8695407, 0, 1.3232019)
+shape = SubResource("BoxShape3D_kqjpo")

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name Spinner
 #static var ref: Spinner ; func _init() -> void:ref=self
 

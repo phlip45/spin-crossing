@@ -7,7 +7,7 @@ class_name Bridge extends Node3D
 var built: bool = false
 
 func build() -> void:
-	collision_shape_3d.set_deferred("disabled", false)
+	collision_shape_3d.set_deferred("disabled", true)
 	built = true
 	print("Building %s" % bridgename)
 	bridge_center_wood.show()

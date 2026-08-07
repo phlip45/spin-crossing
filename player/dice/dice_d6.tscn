@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://hf6rt7fy3dmr"]
+
+[ext_resource type="Script" uid="uid://dy1am6gfpmhn8" path="res://player/dice/dice.gd" id="1_jggst"]
+[ext_resource type="Script" uid="uid://dcyodw431xmy8" path="res://player/dice/dice_sides/dice_side.gd" id="2_6tab1"]
+[ext_resource type="Resource" uid="uid://dhbtngger71yw" path="res://player/dice/dice_sides/one.dice_side.tres" id="3_07feu"]
+[ext_resource type="Resource" uid="uid://vii1be8p6i46" path="res://player/dice/dice_sides/two.dice_side.tres" id="4_amqxs"]
+[ext_resource type="Resource" uid="uid://d1ja3bclyvght" path="res://player/dice/dice_sides/three.dice_side.tres" id="5_7w2ib"]
+[ext_resource type="Resource" uid="uid://dwcst3d2cyvrb" path="res://player/dice/dice_sides/four.dice_side.tres" id="6_usfp3"]
+[ext_resource type="Resource" uid="uid://ckbrlojag36gb" path="res://player/dice/dice_sides/five.dice_side.tres" id="7_17d7w"]
+[ext_resource type="Resource" uid="uid://bn8yhignyio4b" path="res://player/dice/dice_sides/six.dice_side.tres" id="8_jx5ig"]
+[ext_resource type="Texture2D" uid="uid://cqu4sjxu0f8yh" path="res://Assets/dice/dice_1.png" id="9_bxuiv"]
+
+[node name="Dice" type="Control" unique_id=1649998881 node_paths=PackedStringArray("face")]
+custom_minimum_size = Vector2(136, 136)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -68.0
+offset_top = -68.0
+offset_right = 68.0
+offset_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_jggst")
+face = NodePath("Control/Face")
+sides = Array[ExtResource("2_6tab1")]([ExtResource("3_07feu"), ExtResource("4_amqxs"), ExtResource("5_7w2ib"), ExtResource("6_usfp3"), ExtResource("7_17d7w"), ExtResource("8_jx5ig")])
+
+[node name="Control" type="Control" parent="." unique_id=1659219647]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Face" type="Sprite2D" parent="Control" unique_id=1219618935]
+texture = ExtResource("9_bxuiv")

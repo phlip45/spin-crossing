@@ -31,7 +31,7 @@ bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
 bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
 
 [node name="PointOfInterest" parent="." index="2" unique_id=34609657 instance=ExtResource("3_qywq8")]
-radius = 1.8599999999999999
+radius = 1.86
 
 [node name="UI_CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=815109194]
 

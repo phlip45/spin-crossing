@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bi3ilow1fevjx"]
+
+[ext_resource type="Script" uid="uid://bk3nxlny3edlb" path="res://player/spinners/spinner_overlay.gd" id="1_ny4ad"]
+[ext_resource type="PackedScene" uid="uid://c0plxgnaswj5n" path="res://player/dice/dice_roller.tscn" id="2_3eq3i"]
+[ext_resource type="Script" uid="uid://di8bxgfiyugwv" path="res://player/spinners/spinner.gd" id="3_ood4x"]
+[ext_resource type="Texture2D" uid="uid://cxulkkrt0ihn6" path="res://Assets/spinner_base.png" id="4_2p4ko"]
+[ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="5_3eq3i"]
+[ext_resource type="Texture2D" uid="uid://c0n4tthggdbjp" path="res://Assets/spinner_hand.png" id="5_dm1hh"]
+
+[node name="SpinnerOverlay" type="Control" unique_id=1145093843 node_paths=PackedStringArray("spinner", "dice_roller")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ny4ad")
+spinner = NodePath("Spinner")
+dice_roller = NodePath("DiceRollerCenter/DiceRoller")
+
+[node name="Spinner" type="Control" parent="." unique_id=747568849]
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
+script = ExtResource("3_ood4x")
+
+[node name="SpinnerBase" type="Sprite2D" parent="Spinner" unique_id=1039599091]
+texture = ExtResource("4_2p4ko")
+
+[node name="Node2D" type="Node2D" parent="Spinner" unique_id=876081098]
+rotation = 0.008198667
+
+[node name="SpinnerHand" type="Sprite2D" parent="Spinner/Node2D" unique_id=1695908754]
+unique_name_in_owner = true
+position = Vector2(-0.08534622, 0.09185505)
+texture = ExtResource("5_dm1hh")
+offset = Vector2(32.085346, -1.091855)
+
+[node name="Pulse" parent="Spinner" unique_id=1154750537 node_paths=PackedStringArray("host") instance=ExtResource("5_3eq3i")]
+host = NodePath("..")
+amplitude = 0.05
+
+[node name="DiceRollerCenter" type="Control" parent="." unique_id=1183612027]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DiceRoller" parent="DiceRollerCenter" unique_id=505214089 instance=ExtResource("2_3eq3i")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DiceRollerSpinnerLocation" type="Control" parent="." unique_id=1475785104]
+anchors_preset = 0
+offset_left = 230.0
+offset_top = 417.0
+offset_right = 230.0
+offset_bottom = 417.0

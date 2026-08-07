@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://hkis2qphhuqm"]
-
-[ext_resource type="PackedScene" uid="uid://bxpmb0kbe1y3g" path="res://player/spinners/spinner.tscn" id="1_k15mi"]
-
-[node name="SpinnerTest" type="Node2D" unique_id=915280973]
-
-[node name="Spinner" parent="." unique_id=899201435 instance=ExtResource("1_k15mi")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=281352560]

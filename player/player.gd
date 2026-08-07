@@ -1,12 +1,13 @@
 extends CharacterBody3D
 class_name Player
-static var ref: Player ; func _init() -> void:ref=self
+#static var ref: Player ; func _init() -> void:ref=self
 
 @export var speed = 5.0
 @export var sprint:float = 10.0
 @export var sprint_max:float = 10.0
 @export var acceleration:float = 1.0
 @export var jump_strength:float = 10.0
+@export var distance_multiplier:float = 3
 var debug:bool
 const JUMP_VELOCITY = 4.5
 var mouse_move:Vector2
@@ -14,6 +15,8 @@ var mouse_move:Vector2
 @onready var ground_cast: RayCast3D = $GroundCast
 @onready var facing_arrow_pivot: Node3D = $FacingArrowPivot
 @onready var spinner_overlay: SpinnerOverlay = $CanvasLayer/SpinnerOverlay
+
+var dice:Array[Dice]
 
 static var coins_collected:int
 static var bridges_built:int
@@ -48,6 +51,10 @@ func _input(event:InputEvent):
 		mouse_move += amount_to_add * 1.5 * .003
 	if Input.is_action_just_pressed("debug_1"):
 		debug = true
+
+func _init() -> void:
+	Global.player = self
+	dice.append(load("res://player/dice/dice_d6.tscn").instantiate())
 
 func _ready() -> void:
 	spinner_overlay.spinner_result.connect(spinner_move)
@@ -113,30 +120,25 @@ func spinner_move(direction:Vector3, distance:float):
 	
 	direction = direction.normalized()
 	
-	var world_direction = facing_arrow_pivot.global_transform.basis * direction
+	var world_direction:Vector3 = facing_arrow_pivot.global_transform.basis * direction
 	
-	var start_basis = facing_arrow_pivot.global_transform.basis
+	var start_basis:Basis = facing_arrow_pivot.global_transform.basis
 	facing_arrow_pivot.look_at(position + world_direction)
-	var end_basis = facing_arrow_pivot.global_transform.basis
+	var end_basis:Basis = facing_arrow_pivot.global_transform.basis
 	facing_arrow_pivot.global_transform.basis = start_basis
 	
+	if moving_tween: moving_tween.kill()
 	moving_tween = create_tween()
-	moving_tween.set_parallel(true)
-	
-	moving_tween.tween_property(
-		self, 
-		"position", 
-		position + world_direction * distance, 
-		1.0
-	)
-	
 	moving_tween.tween_method(
 		func(t: float):
 			facing_arrow_pivot.global_transform.basis = start_basis.slerp(end_basis, t),
 		0.0, 1.0, 1.0
 	)
-	
-	moving_tween.set_parallel(false)
+	moving_tween.parallel().tween_method(func(progress):
+		velocity = world_direction * distance * speed
+		move_and_slide()
+		,0.0,1.0,1.0
+	)
 	moving_tween.tween_callback(func():
 		state = State.IDLE
 		move_complete.emit()

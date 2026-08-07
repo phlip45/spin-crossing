@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dsty78tx8o3d3"]
 
 [ext_resource type="Script" uid="uid://ge0cexn65hgk" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Script" uid="uid://dtgluwdbygh7m" path="res://Scripts/camera.gd" id="2_qjkh3"]
+[ext_resource type="Script" uid="uid://dtgluwdbygh7m" path="res://player/camera.gd" id="2_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="2_rkbax"]
-[ext_resource type="PackedScene" uid="uid://bi3ilow1fevjx" path="res://player/spinners/SpinnerOverlay002.tscn" id="3_g1dw6"]
-[ext_resource type="PackedScene" uid="uid://bu1cf0m7xn8dc" path="res://Scenes/player_model.tscn" id="4_yw30f"]
+[ext_resource type="PackedScene" uid="uid://bi3ilow1fevjx" path="res://player/spinners/SpinnerOverlay.tscn" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://bu1cf0m7xn8dc" path="res://player/player_model.tscn" id="4_yw30f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kol06"]
 
