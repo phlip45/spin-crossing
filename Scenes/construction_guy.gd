@@ -10,6 +10,7 @@ func try_build(player:Player):
 		player.remove_coin()
 		bridges_to_build[0].build()
 		bridges_to_build.pop_front()
+		_on_point_of_interest_player_entered(player)
 		if bridges_to_build.size() == 0:
 			#End Level, we win!
 			message_label.text = "YOU WIN!"
