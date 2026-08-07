@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://d3esxwaehggr5" path="res://Scenes/bridge.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://by51ga657ooy0" path="res://Scenes/ground_river_side_2.tscn" id="4_7p6j4"]
-[ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/Coin.tscn" id="4_6444e"]
+[ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/coin.tscn" id="4_6444e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
 sky_horizon_color = Color(0.90861344, 0.5890861, 0.2196008, 1)
@@ -93,10 +93,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 34.8
 [node name="Coins" type="Node3D" parent="." unique_id=1417911355]
 
 [node name="Coin" parent="Coins" unique_id=525592988 instance=ExtResource("4_6444e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.325326, 0.59918, -25.102299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.327873, -4.7683716e-07, -13.072559)
 
-[node name="Coin2" parent="Coins" unique_id=1980426395 instance=ExtResource("4_6444e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.109943, 0.59918, -27.467451)
+[node name="Coin2" parent="Coins" unique_id=650467388 instance=ExtResource("4_6444e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28559017, -4.7683716e-07, -5.9323864)
 
-[node name="Coin3" parent="Coins" unique_id=902860765 instance=ExtResource("4_6444e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18383336, 0.59918, -18.170307)
+[node name="Coin3" parent="Coins" unique_id=21159223 instance=ExtResource("4_6444e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.138801, -9.536743e-07, -14.385992)

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b1yk6iko5vkti"]
 
 [ext_resource type="PackedScene" uid="uid://cgtjosheu0jq3" path="res://tweens/rotate.tscn" id="1_s3apc"]
-[ext_resource type="PackedScene" uid="uid://d3thtogpdlhpa" path="res://tweens/bounce.tscn" id="2_je4cw"]
 
 [sub_resource type="GDScript" id="GDScript_2bipn"]
 script/source = "extends Area3D
@@ -34,16 +33,10 @@ height = 0.1
 script = SubResource("GDScript_2bipn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=597480349]
-transform = Transform3D(-0.9544398, 0.29840353, -1.3043633e-08, 0, -4.371139e-08, -1, -0.29840353, -0.9544398, 4.171989e-08, 0, 1.0177778, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, 0)
 mesh = SubResource("CylinderMesh_0mi8o")
 
-[node name="Rotate" parent="MeshInstance3D" unique_id=630683539 node_paths=PackedStringArray("host") instance=ExtResource("1_s3apc")]
-host = NodePath("..")
-phase = 4.859770530154775
-
-[node name="Bounce" parent="MeshInstance3D" unique_id=650267601 node_paths=PackedStringArray("host") instance=ExtResource("2_je4cw")]
-host = NodePath("..")
-phase = 1.670566331644634
+[node name="Rotate" parent="MeshInstance3D" unique_id=630683539 instance=ExtResource("1_s3apc")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=531870446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

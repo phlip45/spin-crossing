@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d3thtogpdlhpa"]
+
+[ext_resource type="Script" uid="uid://bweskjbo07epn" path="res://tweens/bounce.gd" id="1_w8esy"]
+
+[node name="Bounce" type="Node" unique_id=650267601 node_paths=PackedStringArray("host")]
+script = ExtResource("1_w8esy")
+host = NodePath("")
+frequency = 0.5
+amplitude = 0.1

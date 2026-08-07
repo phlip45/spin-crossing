@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dsty78tx8o3d3" path="res://player/player.tscn" id="1_krnhu"]
 [ext_resource type="PackedScene" uid="uid://biu7q1v13lymg" path="res://tweens/pulse.tscn" id="2_sa4sl"]
-[ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/Coin.tscn" id="4_sa4sl"]
+[ext_resource type="PackedScene" uid="uid://b1yk6iko5vkti" path="res://objects/coin.tscn" id="4_sa4sl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sthmh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

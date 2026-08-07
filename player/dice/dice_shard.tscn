@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c5pd4u5ja5237"]
+
+[ext_resource type="Script" uid="uid://dltit80qiifkb" path="res://dice_shard.gd" id="1_mjcqm"]
+[ext_resource type="Resource" uid="uid://dnl4j8aubbupb" path="res://player/dice/dice_sides/nine.dice_side.tres" id="2_rgdmc"]
+[ext_resource type="Texture2D" uid="uid://cc6tpyjimwfnv" path="res://Assets/dice/dice_9.png" id="3_rgdmc"]
+
+[node name="DiceShard" type="Node3D" unique_id=2043084379 node_paths=PackedStringArray("sprite_3d")]
+script = ExtResource("1_mjcqm")
+sprite_3d = NodePath("Sprite3D")
+dice_side = ExtResource("2_rgdmc")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=944086749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+texture = ExtResource("3_rgdmc")
